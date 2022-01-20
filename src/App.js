@@ -42,7 +42,7 @@ const App = () => {
       .catch((error) => console.error(error));
   };
 
-  console.log(data);
+  console.log(info);
 
   useEffect(() => {
     fetchData();

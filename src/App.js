@@ -2,8 +2,8 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { StaticMap } from "react-map-gl";
-import DeckGL, { GeoJsonLayer, ArcLayer } from "deck.gl";
-import { LineLayer } from "@deck.gl/layers";
+import DeckGL, { GeoJsonLayer, ArcLayer, LineLayer } from "deck.gl";
+// import {  } from "@deck.gl/layers";
 
 const App = () => {
   const [info, setInfo] = useState([]);

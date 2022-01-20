@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [data, setData] = useState([]);
+  const MAPBOX_TOKEN =
+    "pk.eyJ1IjoiY29yYWxlZWxvbmciLCJhIjoiY2t5bXVpcDVoM2oxNTJxbzg3MjFsa3Z0eSJ9.BtzKiFvjtKrtbejc2Z2NSA";
+
+  const URL =
+    "https://api.v2.emissions-api.org/api/v2/carbonmonoxide/geo.json?country=US&begin=2019-05-01&end=2019-05-04";
+
+  const fetchData = async () => {
+    await axios
+
+      .get(URL)
+      .then((response) => {
+        setData(response);
+      })
+      .catch((error) => console.error(error));
+  };
+
+  console.log(data);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  return <div className="App"></div>;
 }
 
 export default App;

@@ -9,6 +9,26 @@
       name="description"
       content="Web site created using create-react-app"
     />
+    <!-- deck.gl standalone bundle -->
+    <script src="https://unpkg.com/deck.gl@^7.0.0/dist.min.js"></script>
+
+    <!-- Mapbox dependencies -->
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js"></script>
+    <link
+      href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+
+    <style type="text/css">
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #container {
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -27,7 +47,7 @@
     <title>React App</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!-- <noscript>You need to enable JavaScript to run this app.</noscript> -->
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -39,5 +59,12 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <div id="container" style="height: 500px"></div>
+
+    <script src="https://unpkg.com/deck.gl@7.3/dist.min.js"></script>
+    <script type="text/javascript">
+      <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js">
+    </script>
   </body>
 </html>
